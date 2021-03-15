@@ -2,4 +2,8 @@ import express from "express";
 
 const app = express();
 
-app.listen(3380);
+app.get("/", (request, response) => {
+  return response.json({ message: "Hello World" });
+});
+
+app.listen(3380, () => console.log("Server is running"));
