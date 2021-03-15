@@ -6,7 +6,7 @@
   "author": "Nadia <nlnadialigia@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint 'src/**' --fix"
+    "lint": "eslint --fix"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
