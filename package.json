@@ -6,7 +6,7 @@
   "author": "Nadia <nlnadialigia@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint --fix",
+    "lint": "eslint 'src/**' --fix",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts"
   },
   "devDependencies": {
