@@ -18,7 +18,7 @@ class CategoriesRepository implements ICategoriesRepository {
     Object.assign(category, {
       name,
       description,
-      create_at: new Date(),
+      create_at: new Date()
     });
 
     this.categories.push(category);
