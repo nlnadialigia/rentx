@@ -3,8 +3,8 @@
   "host": "localhost",
   "port": 5432,
   "username": "docker",
-  "password": "ignite",
-  "database": "rentalx",
+  "password": "rentx-ignite",
+  "database": "rentx",
   "migrations": ["./src/database/migrations/*.ts"],
   "entities": ["./src/modules/**/entities/*.ts"],
   "cli": {

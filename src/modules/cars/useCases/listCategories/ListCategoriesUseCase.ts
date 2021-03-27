@@ -3,7 +3,7 @@ import { CategoriesRepository } from '../../repositories/implementations/Categor
 
 class ListCategoriesUseCase {
   constructor(private categoriesRepository: CategoriesRepository) {}
-  execute(): Promise<Category[]> {
+  execute(): Category[] {
     const categories = this.categoriesRepository.list();
 
     return categories;
