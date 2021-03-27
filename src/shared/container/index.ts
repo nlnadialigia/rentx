@@ -5,11 +5,11 @@ import { SpecificationsRepository } from '../../modules/cars/repositories/implem
 import { ISpecificationsRepository } from '../../modules/cars/repositories/ISpecificationsRepository';
 
 container.registerSingleton<ICategoriesRepository>(
-  "CategoriesRepository",
+  'CategoriesRepository',
   CategoriesRepository
-)
+);
 
 container.registerSingleton<ISpecificationsRepository>(
-  "SpecificationRepository",
+  'SpecificationRepository',
   SpecificationsRepository
-)
+);
