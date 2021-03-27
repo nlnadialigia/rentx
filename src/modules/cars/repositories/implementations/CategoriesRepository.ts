@@ -6,10 +6,10 @@ import {
 } from '../ICategoriesRepository';
 
 class CategoriesRepository implements ICategoriesRepository {
-  private respository: Repository<Category>
+  private respository: Repository<Category>;
 
   constructor() {
-    this.respository = getRepository(Category)
+    this.respository = getRepository(Category);
   }
 
   async create({ name, description }: ICreateCategoryDTO): Promise<void> {
@@ -19,7 +19,6 @@ class CategoriesRepository implements ICategoriesRepository {
     });
 
     await this.respository.save(category);
-
   }
 
   async list(): Promise<Category[]> {
