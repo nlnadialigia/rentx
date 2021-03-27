@@ -13,7 +13,10 @@ class User {
   username: string;
 
   @Column()
-  emai: string;
+  email: string;
+
+  @Column()
+  password: string;
 
   @Column()
   driver_license: string;
