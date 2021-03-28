@@ -5,6 +5,7 @@
       "type": "node",
       "request": "attach",
       "name": "Launch Program",
+      "port": 9229,
       "skipFiles": [
         "<node_internals>/**"
       ],
