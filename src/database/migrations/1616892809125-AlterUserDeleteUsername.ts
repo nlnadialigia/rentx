@@ -11,7 +11,8 @@ export class AlterUserDeleteUsername1616892809125
       'users',
       new TableColumn({
         name: 'username',
-        type: 'varchar'
+        type: 'varchar',
+        isNullable: true
       })
     );
   }
