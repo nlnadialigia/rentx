@@ -4,7 +4,7 @@ import { UsersRepository } from '../../repositories/implementations/UsersReposit
 import { IUsersRepository } from '../../repositories/IUsersRepository';
 
 @injectable()
-class CreateuserUseCase {
+class CreateUserUseCase {
   constructor(
     @inject(UsersRepository)
     private usersRepository: IUsersRepository
@@ -27,4 +27,4 @@ class CreateuserUseCase {
   }
 }
 
-export { CreateuserUseCase };
+export { CreateUserUseCase };
