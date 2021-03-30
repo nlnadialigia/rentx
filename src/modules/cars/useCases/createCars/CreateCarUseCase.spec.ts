@@ -16,8 +16,8 @@ describe('Create Car', () => {
     createCarUseCase = new CreateCarUseCase(carsRepository);
   });
 
-  it('Should be able to create a new car', () => {
-    createCarUseCase.execute({
+  it('Should be able to create a new car', async () => {
+    const car = await createCarUseCase.execute({
       name: generate(),
       description: generate(),
       daily_rate: 100,
@@ -26,6 +26,8 @@ describe('Create Car', () => {
       brand: generate(),
       category_id: generate()
     });
+
+    expect(car).toHaveProperty('id');
   });
 
   it('Should not be able to create a car with license plate existent', () => {
@@ -50,5 +52,17 @@ describe('Create Car', () => {
         category_id: generate()
       });
     }).rejects.toBeInstanceOf(AppError);
+  });
+
+  it('Should be able to create a car with avaliable true by default', () => {
+    createCarUseCase.execute({
+      name: generate(),
+      description: generate(),
+      daily_rate: 100,
+      license_plate: generate(),
+      fine_amount: 60,
+      brand: generate(),
+      category_id: generate()
+    });
   });
 });
