@@ -3,7 +3,7 @@ import { Category } from '@modules/cars/entities/Category';
 import {
   ICategoriesRepository,
   ICreateCategoryDTO
-} from '../ICategoriesRepository';
+} from '@modules/cars/repositories/ICategoriesRepository';
 
 class CategoriesRepository implements ICategoriesRepository {
   private respository: Repository<Category>;
