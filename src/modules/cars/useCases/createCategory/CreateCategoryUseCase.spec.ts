@@ -28,8 +28,6 @@ describe('Create Category', () => {
       category.name
     );
 
-    console.log(categoryCreated);
-
     expect(categoryCreated).toHaveProperty('id');
   });
   it('Should not be able to create a new category with name exists', async () => {

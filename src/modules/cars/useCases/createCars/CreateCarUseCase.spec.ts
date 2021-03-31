@@ -20,7 +20,7 @@ describe('Create Car', () => {
     const car = await createCarUseCase.execute({
       name: generate(),
       description: generate(),
-      daily_rate: 100,
+      daily_rate: 200,
       license_plate: generate(),
       fine_amount: 60,
       brand: generate(),

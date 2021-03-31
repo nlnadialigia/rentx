@@ -1,5 +1,5 @@
 import { inject, injectable } from 'tsyringe';
-import { CategoriesRepository } from '@modules/cars/infra/repositories/CategoriesRepository';
+import { CategoriesRepository } from '@modules/cars/infra/typeorm/repositories/CategoriesRepository';
 import { ICategoriesRepository } from '@modules/cars/repositories/ICategoriesRepository';
 import { AppError } from '@shared/errors/AppError';
 
