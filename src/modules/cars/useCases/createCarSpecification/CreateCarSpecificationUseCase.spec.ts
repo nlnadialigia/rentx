@@ -1,10 +1,12 @@
 import crypto from 'crypto';
 import { CarsRepositoryInMemory } from '@modules/cars/repositories/in-memory/CarsRepositoryInMemory';
+import { SpecificationsRepositoryInMemory } from '@modules/cars/repositories/in-memory/SpecificationsRepositoryInMemory';
 import { AppError } from '@shared/errors/AppError';
 import { CreateCarSpecificationUseCase } from './CreateCarSpecificationUseCase';
 
 let createCarSpecificationUseCase: CreateCarSpecificationUseCase;
 let carsRepositoryInMemory: CarsRepositoryInMemory;
+let specificationsRepositoryInMemory: SpecificationsRepositoryInMemory;
 
 const generate = () => {
   return crypto.randomBytes(20).toString('hex');
@@ -13,8 +15,10 @@ const generate = () => {
 describe('Specifications Car', () => {
   beforeEach(() => {
     carsRepositoryInMemory = new CarsRepositoryInMemory();
+    specificationsRepositoryInMemory = new SpecificationsRepositoryInMemory();
     createCarSpecificationUseCase = new CreateCarSpecificationUseCase(
-      carsRepositoryInMemory
+      carsRepositoryInMemory,
+      specificationsRepositoryInMemory
     );
   });
 
@@ -29,7 +33,12 @@ describe('Specifications Car', () => {
       category_id: generate()
     });
 
-    const specification_id = [generate()];
+    const specification = await specificationsRepositoryInMemory.create({
+      name: generate(),
+      description: generate()
+    });
+
+    const specification_id = [specification.id];
 
     createCarSpecificationUseCase.execute({
       car_id: car.id,
