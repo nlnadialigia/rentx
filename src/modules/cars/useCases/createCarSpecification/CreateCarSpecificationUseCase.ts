@@ -1,3 +1,4 @@
+import { Car } from '@modules/cars/infra/typeorm/entities/Car';
 import { ICarsRpository } from '@modules/cars/repositories/ICarsRepository';
 import { ISpecificationsRepository } from '@modules/cars/repositories/ISpecificationsRepository';
 import { AppError } from '@shared/errors/AppError';
@@ -12,7 +13,7 @@ class CreateCarSpecificationUseCase {
     private carsRepository: ICarsRpository,
     private specificationRepository: ISpecificationsRepository
   ) {}
-  async execute({ car_id, specification_id }: IRequest): Promise<void> {
+  async execute({ car_id, specification_id }: IRequest): Promise<Car> {
     const carAlreadyExists = await this.carsRepository.findById(car_id);
 
     if (!carAlreadyExists) {
@@ -26,6 +27,8 @@ class CreateCarSpecificationUseCase {
     carAlreadyExists.specifications = specifications;
 
     await this.carsRepository.create(carAlreadyExists);
+
+    return carAlreadyExists;
   }
 }
 
