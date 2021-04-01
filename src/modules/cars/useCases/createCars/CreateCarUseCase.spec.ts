@@ -54,7 +54,7 @@ describe('Create Car', () => {
     }).rejects.toBeInstanceOf(AppError);
   });
 
-  it('Should be able to create a car with avaliable true by default', () => {
+  it('Should be able to create a car with available true by default', () => {
     createCarUseCase.execute({
       name: generate(),
       description: generate(),
