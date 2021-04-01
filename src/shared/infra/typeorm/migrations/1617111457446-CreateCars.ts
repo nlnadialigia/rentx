@@ -24,7 +24,7 @@ export class CreateCars1617111457446 implements MigrationInterface {
             type: 'numeric'
           },
           {
-            name: 'avaliable',
+            name: 'available',
             type: 'boolean',
             default: true
           },
