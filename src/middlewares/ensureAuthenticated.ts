@@ -1,8 +1,8 @@
 /* eslint-disable func-names */
 import { NextFunction, Request, Response } from 'express';
 import { verify } from 'jsonwebtoken';
-import { UsersRepository } from '@modules/accounts/infra/repositories/UsersRepository';
-import { AppError } from '@shared/errors/AppError';
+import { AppError } from '../errors/AppError';
+import { UsersRepository } from '../modules/accounts/repositories/implementations/UsersRepository';
 
 interface IPayload {
   sub: string;

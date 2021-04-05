@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import fs from 'fs';
 
 export const deleFile = async (filename: string) => {
