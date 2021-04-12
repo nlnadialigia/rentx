@@ -6,9 +6,9 @@
   "author": "Nadia <nlnadialigia@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
-    "trun": "ts-node-dev ./node_modules/typeorm/cli migration:run",
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
+    "trun": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli migration:run",
     "test": "jest"
   },
   "devDependencies": {
@@ -31,6 +31,7 @@
     "prettier": "^2.2.1",
     "ts-jest": "^26.5.4",
     "ts-node-dev": "^1.1.6",
+    "tsconfig-paths": "^3.9.0",
     "typescript": "^4.2.3"
   },
   "dependencies": {
