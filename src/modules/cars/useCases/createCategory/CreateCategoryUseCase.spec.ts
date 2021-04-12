@@ -1,6 +1,6 @@
 import crypto from 'crypto';
-import { AppError } from '@errors/AppError';
 import { CategoriesRepositoryInMemory } from '@modules/cars/repositories/inMemory/CategoriesRepositoryInMemory';
+import { AppError } from '@shared/errors/AppError';
 import { CreateCategoryUseCase } from './CreateCategoryUseCase';
 
 let createCategoryUseCase: CreateCategoryUseCase;

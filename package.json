@@ -1,12 +1,12 @@
 {
   "name": "rentx",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/shared/infra/http/server.ts",
   "repository": "https://github.com/nlnadialigia/rentalx.git",
   "author": "Nadia <nlnadialigia@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn .",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
     "trun": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli migration:run",
     "test": "jest"
