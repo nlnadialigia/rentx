@@ -1,5 +1,6 @@
 import crypto from 'crypto';
 import { CarsRepositoryInMemory } from '@modules/cars/repositories/inMemory/CarsRepositoryinMemory';
+import { AppError } from '@shared/errors/AppError';
 import { CreateCarUseCase } from './CreateCarUseCase';
 
 let createCarUseCase: CreateCarUseCase;
@@ -27,5 +28,31 @@ describe('Create car', () => {
     };
 
     await createCarUseCase.execute(car);
+  });
+
+  it('Should not be able to create a car with existing license plate', async () => {
+    expect(async () => {
+      const car1 = {
+        name: generate(),
+        description: generate(),
+        daily_rate: 100,
+        license_plate: generate(),
+        fine_amount: 60,
+        brand: generate(),
+        category_id: generate()
+      };
+
+      await createCarUseCase.execute(car1);
+
+      await createCarUseCase.execute({
+        name: generate(),
+        description: generate(),
+        daily_rate: 100,
+        license_plate: car1.license_plate,
+        fine_amount: 60,
+        brand: generate(),
+        category_id: generate()
+      });
+    }).rejects.toBeInstanceOf(AppError);
   });
 });
