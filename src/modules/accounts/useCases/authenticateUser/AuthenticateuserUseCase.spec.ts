@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+import { AppError } from '../../../../errors/AppError';
 import { ICreateUserDTO } from '../../dtos/ICreateUserDTO';
 import { UsersRepositoryInMemory } from '../../repositories/inMemory/UsersRepositoryInMemory';
 import { CreateUserUseCase } from '../createUser/CreateUserUseCase';
@@ -36,5 +37,14 @@ describe('Atuthenticate user', () => {
     });
 
     expect(result).toHaveProperty('token');
+  });
+
+  it('Should not be able to authenticate a non-existent user', async () => {
+    expect(async () => {
+      await authenticateUserUseCase.execute({
+        email: generate(),
+        password: generate()
+      });
+    }).rejects.toBeInstanceOf(AppError);
   });
 });
