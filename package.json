@@ -8,10 +8,12 @@
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
-    "trun": "ts-node-dev ./node_modules/typeorm/cli migration:run"
+    "trun": "ts-node-dev ./node_modules/typeorm/cli migration:run",
+    "test": "jest"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
+    "@types/jest": "^26.0.22",
     "@types/multer": "^1.4.5",
     "@types/swagger-ui-express": "^4.1.2",
     "@types/uuid": "^8.3.0",
@@ -25,7 +27,9 @@
     "eslint-plugin-import-helpers": "^1.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "git-commit-msg": "^0.3.0",
+    "jest": "^26.6.3",
     "prettier": "^2.2.1",
+    "ts-jest": "^26.5.4",
     "ts-node-dev": "^1.1.6",
     "typescript": "^4.2.3"
   },
