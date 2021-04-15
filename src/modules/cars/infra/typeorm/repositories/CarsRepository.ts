@@ -10,6 +10,14 @@ class CarsRepository implements ICarsRepository {
     this.repository = getRepository(Car);
   }
 
+  findAvailable(
+    brand?: string,
+    category_id?: string,
+    name?: string
+  ): Promise<Car[]> {
+    throw new Error('Method not implemented.');
+  }
+
   async create(data: ICreateCarDTO): Promise<Car> {
     const car = this.repository.create(data);
 
