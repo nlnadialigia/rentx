@@ -5,8 +5,22 @@ import { ICarsRepository } from '../ICarsRepository';
 class CarsRepositoryInMemory implements ICarsRepository {
   cars: Car[] = [];
 
-  async findAvailable(): Promise<Car[]> {
-    const cars = this.cars.filter((car) => car.available === true);
+  async findAvailable(
+    brand?: string,
+    category_id?: string,
+    name?: string
+  ): Promise<Car[]> {
+    let cars = this.cars.filter((car) => car.available === true);
+
+    if (brand) {
+      cars = cars.filter((car) => car.brand === brand);
+    }
+    if (category_id) {
+      cars = cars.filter((car) => car.category_id === category_id);
+    }
+    if (name) {
+      cars = cars.filter((car) => car.name === name);
+    }
 
     return cars;
   }
